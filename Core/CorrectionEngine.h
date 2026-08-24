@@ -10,6 +10,6 @@ public:
     void ReloadPersonalDictionary();
     bool LanguageToolAvailable() const { return ltAvailable_; }
 private:
-    SettingsManager& settings_; std::set<std::wstring> words_; std::set<std::wstring> personal_; std::mutex cacheMutex_; std::unordered_map<std::wstring,std::vector<CorrectionIssue>> cache_; bool ltAvailable_=false;
+    SettingsManager& settings_; std::set<std::wstring> words_; std::set<std::wstring> personal_; std::mutex cacheMutex_; std::unordered_map<std::wstring,std::vector<CorrectionIssue>> cache_; bool ltAvailable_=false; std::chrono::steady_clock::time_point nextLanguageToolProbe_{};
     void LoadDictionary(); bool TryLanguageTool(const std::wstring& text,std::vector<CorrectionIssue>& out); std::vector<std::wstring> Suggest(const std::wstring& word,int max); bool IgnoredWord(const std::wstring& word); int Distance(const std::wstring&a,const std::wstring&b);
 };

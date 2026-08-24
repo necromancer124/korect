@@ -14,7 +14,7 @@ add_executable(korect WIN32
 )
 target_include_directories(korect PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 target_compile_definitions(korect PRIVATE UNICODE _UNICODE WIN32_LEAN_AND_MEAN NOMINMAX)
-target_link_libraries(korect PRIVATE user32 gdi32 comctl32 comdlg32 shell32 shlwapi advapi32 ole32 oleaut32 uuid winhttp msimg32)
+target_link_libraries(korect PRIVATE user32 gdi32 comctl32 comdlg32 shell32 shlwapi advapi32 ole32 oleaut32 uuid winhttp ws2_32 msimg32)
 if(MINGW)
   target_link_options(korect PRIVATE -municode -static -static-libgcc -static-libstdc++)
 endif()

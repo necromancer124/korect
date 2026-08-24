@@ -73,6 +73,7 @@ java -cp languagetool-server.jar org.languagetool.server.HTTPServer --port 8081 
 - Results are cached for repeated text.
 - Maximum text length defaults to 12,000 characters.
 - The Options window is separate so customization does not inflate the overlay path.
+- Local LanguageTool is probed through a fast localhost port check first. If it is not running, korect falls back to the built-in checker immediately and waits before probing again, so missing LanguageTool does not delay normal correction.
 
 ## Build
 
