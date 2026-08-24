@@ -1,0 +1,23 @@
+# Build outputs
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+*.obj
+*.o
+*.exe
+*.dll
+*.a
+*.lib
+
+# Local/runtime files
+settings.json
+dictionary.txt
+*.log
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
